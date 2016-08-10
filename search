@@ -1,0 +1,1128 @@
+Help on ComboBox in module gtk object:
+
+class CCoommbbooBBooxx(Bin, CellEditable, CellLayout)
+ |  Object GtkComboBox
+ |  
+ |  Signals from GtkComboBox:
+ |    changed ()
+ |    move-active (GtkScrollType)
+ |    popup ()
+ |    popdown () -> gboolean
+ |  
+ |  Properties from GtkComboBox:
+ |    model -> GtkTreeModel: ComboBox model
+ |      The model for the combo box
+ |    wrap-width -> gint: Wrap width
+ |      Wrap width for laying out the items in a grid
+ |    row-span-column -> gint: Row span column
+ |      TreeModel column containing the row span values
+ |    column-span-column -> gint: Column span column
+ |      TreeModel column containing the column span values
+ |    active -> gint: Active item
+ |      The item which is currently active
+ |    add-tearoffs -> gboolean: Add tearoffs to menus
+ |      Whether dropdowns should have a tearoff menu item
+ |    tearoff-title -> gchararray: Tearoff Title
+ |      A title that may be displayed by the window manager when the popup is torn-off
+ |    has-frame -> gboolean: Has Frame
+ |      Whether the combo box draws a frame around the child
+ |    focus-on-click -> gboolean: Focus on click
+ |      Whether the combo box grabs focus when it is clicked with the mouse
+ |    popup-shown -> gboolean: Popup shown
+ |      Whether the combo's dropdown is shown
+ |    button-sensitivity -> GtkSensitivityType: Button Sensitivity
+ |      Whether the dropdown button is sensitive when the model is empty
+ |    has-entry -> gboolean: Has Entry
+ |      Whether combo box has an entry
+ |    entry-text-column -> gint: Entry Text Column
+ |      The column in the combo box's model to associate with strings from the entry if the combo was created with #GtkComboBox:has-entry = %TRUE
+ |  
+ |  Signals from GtkCellEditable:
+ |    editing-done ()
+ |    remove-widget ()
+ |  
+ |  Signals from GtkContainer:
+ |    add (GtkWidget)
+ |    remove (GtkWidget)
+ |    check-resize ()
+ |    set-focus-child (GtkWidget)
+ |  
+ |  Properties from GtkContainer:
+ |    border-width -> guint: Border width
+ |      The width of the empty border outside the containers children
+ |    resize-mode -> GtkResizeMode: Resize mode
+ |      Specify how resize events are handled
+ |    child -> GtkWidget: Child
+ |      Can be used to add a new child to the container
+ |  
+ |  Signals from GtkWidget:
+ |    composited-changed ()
+ |    show ()
+ |    hide ()
+ |    map ()
+ |    unmap ()
+ |    realize ()
+ |    unrealize ()
+ |    size-request (GtkRequisition)
+ |    size-allocate (GdkRectangle)
+ |    state-changed (GtkStateType)
+ |    parent-set (GtkWidget)
+ |    hierarchy-changed (GtkWidget)
+ |    style-set (GtkStyle)
+ |    direction-changed (GtkTextDirection)
+ |    grab-notify (gboolean)
+ |    child-notify (GParam)
+ |    mnemonic-activate (gboolean) -> gboolean
+ |    grab-focus ()
+ |    focus (GtkDirectionType) -> gboolean
+ |    move-focus (GtkDirectionType)
+ |    event (GdkEvent) -> gboolean
+ |    event-after (GdkEvent)
+ |    button-press-event (GdkEvent) -> gboolean
+ |    button-release-event (GdkEvent) -> gboolean
+ |    scroll-event (GdkEvent) -> gboolean
+ |    motion-notify-event (GdkEvent) -> gboolean
+ |    keynav-failed (GtkDirectionType) -> gboolean
+ |    delete-event (GdkEvent) -> gboolean
+ |    destroy-event (GdkEvent) -> gboolean
+ |    expose-event (GdkEvent) -> gboolean
+ |    key-press-event (GdkEvent) -> gboolean
+ |    key-release-event (GdkEvent) -> gboolean
+ |    enter-notify-event (GdkEvent) -> gboolean
+ |    leave-notify-event (GdkEvent) -> gboolean
+ |    configure-event (GdkEvent) -> gboolean
+ |    focus-in-event (GdkEvent) -> gboolean
+ |    focus-out-event (GdkEvent) -> gboolean
+ |    map-event (GdkEvent) -> gboolean
+ |    unmap-event (GdkEvent) -> gboolean
+ |    property-notify-event (GdkEvent) -> gboolean
+ |    selection-clear-event (GdkEvent) -> gboolean
+ |    selection-request-event (GdkEvent) -> gboolean
+ |    selection-notify-event (GdkEvent) -> gboolean
+ |    selection-received (GtkSelectionData, guint)
+ |    selection-get (GtkSelectionData, guint, guint)
+ |    proximity-in-event (GdkEvent) -> gboolean
+ |    proximity-out-event (GdkEvent) -> gboolean
+ |    drag-leave (GdkDragContext, guint)
+ |    drag-begin (GdkDragContext)
+ |    drag-end (GdkDragContext)
+ |    drag-data-delete (GdkDragContext)
+ |    drag-failed (GdkDragContext, GtkDragResult) -> gboolean
+ |    drag-motion (GdkDragContext, gint, gint, guint) -> gboolean
+ |    drag-drop (GdkDragContext, gint, gint, guint) -> gboolean
+ |    drag-data-get (GdkDragContext, GtkSelectionData, guint, guint)
+ |    drag-data-received (GdkDragContext, gint, gint, GtkSelectionData, guint, guint)
+ |    visibility-notify-event (GdkEvent) -> gboolean
+ |    client-event (GdkEvent) -> gboolean
+ |    no-expose-event (GdkEvent) -> gboolean
+ |    window-state-event (GdkEvent) -> gboolean
+ |    damage-event (GdkEvent) -> gboolean
+ |    grab-broken-event (GdkEvent) -> gboolean
+ |    query-tooltip (gint, gint, gboolean, GtkTooltip) -> gboolean
+ |    popup-menu () -> gboolean
+ |    show-help (GtkWidgetHelpType) -> gboolean
+ |    accel-closures-changed ()
+ |    screen-changed (GdkScreen)
+ |    can-activate-accel (guint) -> gboolean
+ |  
+ |  Properties from GtkWidget:
+ |    name -> gchararray: Widget name
+ |      The name of the widget
+ |    parent -> GtkContainer: Parent widget
+ |      The parent widget of this widget. Must be a Container widget
+ |    width-request -> gint: Width request
+ |      Override for width request of the widget, or -1 if natural request should be used
+ |    height-request -> gint: Height request
+ |      Override for height request of the widget, or -1 if natural request should be used
+ |    visible -> gboolean: Visible
+ |      Whether the widget is visible
+ |    sensitive -> gboolean: Sensitive
+ |      Whether the widget responds to input
+ |    app-paintable -> gboolean: Application paintable
+ |      Whether the application will paint directly on the widget
+ |    can-focus -> gboolean: Can focus
+ |      Whether the widget can accept the input focus
+ |    has-focus -> gboolean: Has focus
+ |      Whether the widget has the input focus
+ |    is-focus -> gboolean: Is focus
+ |      Whether the widget is the focus widget within the toplevel
+ |    can-default -> gboolean: Can default
+ |      Whether the widget can be the default widget
+ |    has-default -> gboolean: Has default
+ |      Whether the widget is the default widget
+ |    receives-default -> gboolean: Receives default
+ |      If TRUE, the widget will receive the default action when it is focused
+ |    composite-child -> gboolean: Composite child
+ |      Whether the widget is part of a composite widget
+ |    style -> GtkStyle: Style
+ |      The style of the widget, which contains information about how it will look (colors etc)
+ |    events -> GdkEventMask: Events
+ |      The event mask that decides what kind of GdkEvents this widget gets
+ |    extension-events -> GdkExtensionMode: Extension events
+ |      The mask that decides what kind of extension events this widget gets
+ |    no-show-all -> gboolean: No show all
+ |      Whether gtk_widget_show_all() should not affect this widget
+ |    has-tooltip -> gboolean: Has tooltip
+ |      Whether this widget has a tooltip
+ |    tooltip-markup -> gchararray: Tooltip markup
+ |      The contents of the tooltip for this widget
+ |    tooltip-text -> gchararray: Tooltip Text
+ |      The contents of the tooltip for this widget
+ |    window -> GdkWindow: Window
+ |      The widget's window if it is realized
+ |    double-buffered -> gboolean: Double Buffered
+ |      Whether or not the widget is double buffered
+ |  
+ |  Signals from GtkObject:
+ |    destroy ()
+ |  
+ |  Properties from GtkObject:
+ |    user-data -> gpointer: User Data
+ |      Anonymous User Data Pointer
+ |  
+ |  Signals from GObject:
+ |    notify (GParam)
+ |  
+ |  Method resolution order:
+ |      ComboBox
+ |      Bin
+ |      Container
+ |      Widget
+ |      Object
+ |      gobject._gobject.GObject
+ |      atk.ImplementorIface
+ |      Buildable
+ |      CellEditable
+ |      CellLayout
+ |      gobject.GInterface
+ |      __builtin__.object
+ |  
+ |  Methods defined here:
+ |  
+ |  ____iinniitt____(...)
+ |      x.__init__(...) initializes x; see help(type(x)) for signature
+ |  
+ |  ____iitteerr____(...)
+ |      x.__iter__() <==> iter(x)
+ |  
+ |  aappppeenndd__tteexxtt(...)
+ |  
+ |  ddoo__cchhaannggeedd(...)
+ |  
+ |  ddoo__ggeett__aaccttiivvee__tteexxtt(...)
+ |  
+ |  ggeett__aaccttiivvee(...)
+ |  
+ |  ggeett__aaccttiivvee__iitteerr(...)
+ |  
+ |  ggeett__aaccttiivvee__tteexxtt(...)
+ |  
+ |  ggeett__aadddd__tteeaarrooffffss(...)
+ |  
+ |  ggeett__bbuuttttoonn__sseennssiittiivviittyy(...)
+ |  
+ |  ggeett__ccoolluummnn__ssppaann__ccoolluummnn(...)
+ |  
+ |  ggeett__eennttrryy__tteexxtt__ccoolluummnn(...)
+ |  
+ |  ggeett__ffooccuuss__oonn__cclliicckk(...)
+ |  
+ |  ggeett__hhaass__eennttrryy(...)
+ |  
+ |  ggeett__mmooddeell(...)
+ |  
+ |  ggeett__ppooppuupp__aacccceessssiibbllee(...)
+ |  
+ |  ggeett__rrooww__ssppaann__ccoolluummnn(...)
+ |  
+ |  ggeett__ttiittllee(...)
+ |  
+ |  ggeett__wwrraapp__wwiiddtthh(...)
+ |  
+ |  iinnsseerrtt__tteexxtt(...)
+ |  
+ |  ppooppddoowwnn(...)
+ |  
+ |  ppooppuupp(...)
+ |  
+ |  pprreeppeenndd__tteexxtt(...)
+ |  
+ |  rreemmoovvee__tteexxtt(...)
+ |  
+ |  sseett__aaccttiivvee(...)
+ |  
+ |  sseett__aaccttiivvee__iitteerr(...)
+ |  
+ |  sseett__aadddd__tteeaarrooffffss(...)
+ |  
+ |  sseett__bbuuttttoonn__sseennssiittiivviittyy(...)
+ |  
+ |  sseett__ccoolluummnn__ssppaann__ccoolluummnn(...)
+ |  
+ |  sseett__eennttrryy__tteexxtt__ccoolluummnn(...)
+ |  
+ |  sseett__ffooccuuss__oonn__cclliicckk(...)
+ |  
+ |  sseett__mmooddeell(...)
+ |  
+ |  sseett__rrooww__sseeppaarraattoorr__ffuunncc(...)
+ |  
+ |  sseett__rrooww__ssppaann__ccoolluummnn(...)
+ |  
+ |  sseett__ttiittllee(...)
+ |  
+ |  sseett__wwrraapp__wwiiddtthh(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  ____ggttyyppee____ = <GType GtkComboBox (21217488)>
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Bin:
+ |  
+ |  ggeett__cchhiilldd(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from Bin:
+ |  
+ |  cchhiilldd
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Container:
+ |  
+ |  ____lleenn____(...)
+ |      x.__len__() <==> len(x)
+ |  
+ |  ____nnoonnzzeerroo____(...)
+ |      x.__nonzero__() <==> x != 0
+ |  
+ |  aadddd(...)
+ |  
+ |  aadddd__wwiitthh__pprrooppeerrttiieess(...)
+ |  
+ |  cchheecckk__rreessiizzee(...)
+ |  
+ |  cchhiilldd__ggeett(...)
+ |  
+ |  cchhiilldd__ggeett__pprrooppeerrttyy(...)
+ |  
+ |  cchhiilldd__sseett(...)
+ |  
+ |  cchhiilldd__sseett__pprrooppeerrttyy(...)
+ |  
+ |  cchhiilldd__ttyyppee(...)
+ |  
+ |  cchhiillddrreenn(...)
+ |  
+ |  ddoo__aadddd(...)
+ |  
+ |  ddoo__cchheecckk__rreessiizzee(...)
+ |  
+ |  ddoo__cchhiilldd__ttyyppee(...)
+ |  
+ |  ddoo__ccoommppoossiittee__nnaammee(...)
+ |  
+ |  ddoo__ffoorraallll(...)
+ |  
+ |  ddoo__ggeett__cchhiilldd__pprrooppeerrttyy(...)
+ |  
+ |  ddoo__rreemmoovvee(...)
+ |  
+ |  ddoo__sseett__cchhiilldd__pprrooppeerrttyy(...)
+ |  
+ |  ddoo__sseett__ffooccuuss__cchhiilldd(...)
+ |  
+ |  ffoorraallll(...)
+ |  
+ |  ffoorreeaacchh(...)
+ |  
+ |  ggeett__bboorrddeerr__wwiiddtthh(...)
+ |  
+ |  ggeett__cchhiillddrreenn(...)
+ |  
+ |  ggeett__ffooccuuss__cchhaaiinn(...)
+ |  
+ |  ggeett__ffooccuuss__cchhiilldd(...)
+ |  
+ |  ggeett__ffooccuuss__hhaaddjjuussttmmeenntt(...)
+ |  
+ |  ggeett__ffooccuuss__vvaaddjjuussttmmeenntt(...)
+ |  
+ |  ggeett__rreessiizzee__mmooddee(...)
+ |  
+ |  iinnssttaallll__cchhiilldd__pprrooppeerrttyy(...)
+ |  
+ |  lliisstt__cchhiilldd__pprrooppeerrttiieess(...)
+ |  
+ |  pprrooppaaggaattee__eexxppoossee(...)
+ |  
+ |  rreemmoovvee(...)
+ |  
+ |  rreessiizzee__cchhiillddrreenn(...)
+ |  
+ |  sseett__bboorrddeerr__wwiiddtthh(...)
+ |  
+ |  sseett__ffooccuuss__cchhaaiinn(...)
+ |  
+ |  sseett__ffooccuuss__cchhiilldd(...)
+ |  
+ |  sseett__ffooccuuss__hhaaddjjuussttmmeenntt(...)
+ |  
+ |  sseett__ffooccuuss__vvaaddjjuussttmmeenntt(...)
+ |  
+ |  sseett__rreeaallllooccaattee__rreeddrraawwss(...)
+ |  
+ |  sseett__rreessiizzee__mmooddee(...)
+ |  
+ |  uunnsseett__ffooccuuss__cchhaaiinn(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from Container:
+ |  
+ |  bboorrddeerr__wwiiddtthh
+ |  
+ |  ffooccuuss__cchhiilldd
+ |  
+ |  hhaass__ffooccuuss__cchhaaiinn
+ |  
+ |  nneeeedd__rreessiizzee
+ |  
+ |  rreeaallllooccaattee__rreeddrraawwss
+ |  
+ |  rreessiizzee__mmooddee
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Widget:
+ |  
+ |  aaccttiivvaattee(...)
+ |  
+ |  aadddd__aacccceelleerraattoorr(...)
+ |  
+ |  aadddd__eevveennttss(...)
+ |  
+ |  aadddd__mmnneemmoonniicc__llaabbeell(...)
+ |  
+ |  ccaann__aaccttiivvaattee__aacccceell(...)
+ |  
+ |  cchhiilldd__ffooccuuss(...)
+ |  
+ |  cchhiilldd__nnoottiiffyy(...)
+ |  
+ |  ccllaassss__ppaatthh(...)
+ |  
+ |  ccrreeaattee__ppaannggoo__ccoonntteexxtt(...)
+ |  
+ |  ccrreeaattee__ppaannggoo__llaayyoouutt(...)
+ |  
+ |  ddeessttrrooyy(...)
+ |  
+ |  ddoo__bbuuttttoonn__pprreessss__eevveenntt(...)
+ |  
+ |  ddoo__bbuuttttoonn__rreelleeaassee__eevveenntt(...)
+ |  
+ |  ddoo__ccaann__aaccttiivvaattee__aacccceell(...)
+ |  
+ |  ddoo__cclliieenntt__eevveenntt(...)
+ |  
+ |  ddoo__ccoommppoossiitteedd__cchhaannggeedd(...)
+ |  
+ |  ddoo__ccoonnffiigguurree__eevveenntt(...)
+ |  
+ |  ddoo__ddeelleettee__eevveenntt(...)
+ |  
+ |  ddoo__ddeessttrrooyy__eevveenntt(...)
+ |  
+ |  ddoo__ddiirreeccttiioonn__cchhaannggeedd(...)
+ |  
+ |  ddoo__ddrraagg__bbeeggiinn(...)
+ |  
+ |  ddoo__ddrraagg__ddaattaa__ddeelleettee(...)
+ |  
+ |  ddoo__ddrraagg__ddaattaa__ggeett(...)
+ |  
+ |  ddoo__ddrraagg__ddaattaa__rreecceeiivveedd(...)
+ |  
+ |  ddoo__ddrraagg__ddrroopp(...)
+ |  
+ |  ddoo__ddrraagg__eenndd(...)
+ |  
+ |  ddoo__ddrraagg__lleeaavvee(...)
+ |  
+ |  ddoo__ddrraagg__mmoottiioonn(...)
+ |  
+ |  ddoo__eenntteerr__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__eevveenntt(...)
+ |  
+ |  ddoo__eexxppoossee__eevveenntt(...)
+ |  
+ |  ddoo__ffooccuuss(...)
+ |  
+ |  ddoo__ffooccuuss__iinn__eevveenntt(...)
+ |  
+ |  ddoo__ffooccuuss__oouutt__eevveenntt(...)
+ |  
+ |  ddoo__ggeett__aacccceessssiibbllee(...)
+ |  
+ |  ddoo__ggrraabb__bbrrookkeenn__eevveenntt(...)
+ |  
+ |  ddoo__ggrraabb__ffooccuuss(...)
+ |  
+ |  ddoo__ggrraabb__nnoottiiffyy(...)
+ |  
+ |  ddoo__hhiiddee(...)
+ |  
+ |  ddoo__hhiiddee__aallll(...)
+ |  
+ |  ddoo__hhiieerraarrcchhyy__cchhaannggeedd(...)
+ |  
+ |  ddoo__kkeeyy__pprreessss__eevveenntt(...)
+ |  
+ |  ddoo__kkeeyy__rreelleeaassee__eevveenntt(...)
+ |  
+ |  ddoo__lleeaavvee__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__mmaapp(...)
+ |  
+ |  ddoo__mmaapp__eevveenntt(...)
+ |  
+ |  ddoo__mmnneemmoonniicc__aaccttiivvaattee(...)
+ |  
+ |  ddoo__mmoottiioonn__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__nnoo__eexxppoossee__eevveenntt(...)
+ |  
+ |  ddoo__ppaarreenntt__sseett(...)
+ |  
+ |  ddoo__ppooppuupp__mmeennuu(...)
+ |  
+ |  ddoo__pprrooppeerrttyy__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__pprrooxxiimmiittyy__iinn__eevveenntt(...)
+ |  
+ |  ddoo__pprrooxxiimmiittyy__oouutt__eevveenntt(...)
+ |  
+ |  ddoo__rreeaalliizzee(...)
+ |  
+ |  ddoo__ssccrreeeenn__cchhaannggeedd(...)
+ |  
+ |  ddoo__ssccrroollll__eevveenntt(...)
+ |  
+ |  ddoo__sseelleeccttiioonn__cclleeaarr__eevveenntt(...)
+ |  
+ |  ddoo__sseelleeccttiioonn__ggeett(...)
+ |  
+ |  ddoo__sseelleeccttiioonn__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__sseelleeccttiioonn__rreecceeiivveedd(...)
+ |  
+ |  ddoo__sseelleeccttiioonn__rreeqquueesstt__eevveenntt(...)
+ |  
+ |  ddoo__sshhooww(...)
+ |  
+ |  ddoo__sshhooww__aallll(...)
+ |  
+ |  ddoo__sshhooww__hheellpp(...)
+ |  
+ |  ddoo__ssiizzee__aallllooccaattee(...)
+ |  
+ |  ddoo__ssiizzee__rreeqquueesstt(...)
+ |  
+ |  ddoo__ssttaattee__cchhaannggeedd(...)
+ |  
+ |  ddoo__ssttyyllee__sseett(...)
+ |  
+ |  ddoo__uunnmmaapp(...)
+ |  
+ |  ddoo__uunnmmaapp__eevveenntt(...)
+ |  
+ |  ddoo__uunnrreeaalliizzee(...)
+ |  
+ |  ddoo__vviissiibbiilliittyy__nnoottiiffyy__eevveenntt(...)
+ |  
+ |  ddoo__wwiinnddooww__ssttaattee__eevveenntt(...)
+ |  
+ |  ddrraagg__bbeeggiinn(...)
+ |  
+ |  ddrraagg__cchheecckk__tthhrreesshhoolldd(...)
+ |  
+ |  ddrraagg__ddeesstt__aadddd__iimmaaggee__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ddeesstt__aadddd__tteexxtt__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ddeesstt__aadddd__uurrii__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ddeesstt__ffiinndd__ttaarrggeett(...)
+ |  
+ |  ddrraagg__ddeesstt__ggeett__ttaarrggeett__lliisstt(...)
+ |  
+ |  ddrraagg__ddeesstt__ggeett__ttrraacckk__mmoottiioonn(...)
+ |  
+ |  ddrraagg__ddeesstt__sseett(...)
+ |  
+ |  ddrraagg__ddeesstt__sseett__pprrooxxyy(...)
+ |  
+ |  ddrraagg__ddeesstt__sseett__ttaarrggeett__lliisstt(...)
+ |  
+ |  ddrraagg__ddeesstt__sseett__ttrraacckk__mmoottiioonn(...)
+ |  
+ |  ddrraagg__ddeesstt__uunnsseett(...)
+ |  
+ |  ddrraagg__ggeett__ddaattaa(...)
+ |  
+ |  ddrraagg__hhiigghhlliigghhtt(...)
+ |  
+ |  ddrraagg__ssoouurrccee__aadddd__iimmaaggee__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ssoouurrccee__aadddd__tteexxtt__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ssoouurrccee__aadddd__uurrii__ttaarrggeettss(...)
+ |  
+ |  ddrraagg__ssoouurrccee__ggeett__ttaarrggeett__lliisstt(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett__iiccoonn(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett__iiccoonn__nnaammee(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett__iiccoonn__ppiixxbbuuff(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett__iiccoonn__ssttoocckk(...)
+ |  
+ |  ddrraagg__ssoouurrccee__sseett__ttaarrggeett__lliisstt(...)
+ |  
+ |  ddrraagg__ssoouurrccee__uunnsseett(...)
+ |  
+ |  ddrraagg__uunnhhiigghhlliigghhtt(...)
+ |  
+ |  ddrraaww(...)
+ |  
+ |  eennssuurree__ssttyyllee(...)
+ |  
+ |  eerrrroorr__bbeellll(...)
+ |  
+ |  eevveenntt(...)
+ |  
+ |  ffrreeeezzee__cchhiilldd__nnoottiiffyy(...)
+ |  
+ |  ggeett__aacccceessssiibbllee(...)
+ |  
+ |  ggeett__aaccttiioonn(...)
+ |  
+ |  ggeett__aaccttiivvaattee__ssiiggnnaall(...)
+ |  
+ |  ggeett__aallllooccaattiioonn(...)
+ |  
+ |  ggeett__aanncceessttoorr(...)
+ |  
+ |  ggeett__aapppp__ppaaiinnttaabbllee(...)
+ |  
+ |  ggeett__ccaann__ddeeffaauulltt(...)
+ |  
+ |  ggeett__ccaann__ffooccuuss(...)
+ |  
+ |  ggeett__cchhiilldd__rreeqquuiissiittiioonn(...)
+ |  
+ |  ggeett__cchhiilldd__vviissiibbllee(...)
+ |  
+ |  ggeett__cclliippbbooaarrdd(...)
+ |  
+ |  ggeett__ccoolloorrmmaapp(...)
+ |  
+ |  ggeett__ccoommppoossiittee__nnaammee(...)
+ |  
+ |  ggeett__ddiirreeccttiioonn(...)
+ |  
+ |  ggeett__ddiissppllaayy(...)
+ |  
+ |  ggeett__ddoouubbllee__bbuuffffeerreedd(...)
+ |  
+ |  ggeett__eevveennttss(...)
+ |  
+ |  ggeett__eexxtteennssiioonn__eevveennttss(...)
+ |  
+ |  ggeett__hhaass__ttoooollttiipp(...)
+ |  
+ |  ggeett__hhaass__wwiinnddooww(...)
+ |  
+ |  ggeett__mmaappppeedd(...)
+ |  
+ |  ggeett__mmooddiiffiieerr__ssttyyllee(...)
+ |  
+ |  ggeett__nnaammee(...)
+ |  
+ |  ggeett__nnoo__sshhooww__aallll(...)
+ |  
+ |  ggeett__ppaannggoo__ccoonntteexxtt(...)
+ |  
+ |  ggeett__ppaarreenntt(...)
+ |  
+ |  ggeett__ppaarreenntt__wwiinnddooww(...)
+ |  
+ |  ggeett__ppooiinntteerr(...)
+ |  
+ |  ggeett__rreeaalliizzeedd(...)
+ |  
+ |  ggeett__rreecceeiivveess__ddeeffaauulltt(...)
+ |  
+ |  ggeett__rreeqquuiissiittiioonn(...)
+ |  
+ |  ggeett__rroooott__wwiinnddooww(...)
+ |  
+ |  ggeett__ssccrreeeenn(...)
+ |  
+ |  ggeett__sseennssiittiivvee(...)
+ |  
+ |  ggeett__sseettttiinnggss(...)
+ |  
+ |  ggeett__ssiizzee__rreeqquueesstt(...)
+ |  
+ |  ggeett__ssnnaappsshhoott(...)
+ |  
+ |  ggeett__ssttaattee(...)
+ |  
+ |  ggeett__ssttyyllee(...)
+ |  
+ |  ggeett__ttoooollttiipp__mmaarrkkuupp(...)
+ |  
+ |  ggeett__ttoooollttiipp__tteexxtt(...)
+ |  
+ |  ggeett__ttoooollttiipp__wwiinnddooww(...)
+ |  
+ |  ggeett__ttoopplleevveell(...)
+ |  
+ |  ggeett__vviissiibbllee(...)
+ |  
+ |  ggeett__vviissuuaall(...)
+ |  
+ |  ggeett__wwiinnddooww(...)
+ |  
+ |  ggrraabb__aadddd(...)
+ |  
+ |  ggrraabb__ddeeffaauulltt(...)
+ |  
+ |  ggrraabb__ffooccuuss(...)
+ |  
+ |  ggrraabb__rreemmoovvee(...)
+ |  
+ |  hhaass__ddeeffaauulltt(...)
+ |  
+ |  hhaass__ffooccuuss(...)
+ |  
+ |  hhaass__ggrraabb(...)
+ |  
+ |  hhaass__rrcc__ssttyyllee(...)
+ |  
+ |  hhaass__ssccrreeeenn(...)
+ |  
+ |  hhiiddee(...)
+ |  
+ |  hhiiddee__aallll(...)
+ |  
+ |  hhiiddee__oonn__ddeelleettee(...)
+ |  
+ |  iinnppuutt__sshhaappee__ccoommbbiinnee__mmaasskk(...)
+ |  
+ |  iinntteerrsseecctt(...)
+ |  
+ |  iiss__aanncceessttoorr(...)
+ |  
+ |  iiss__ccoommppoossiitteedd(...)
+ |  
+ |  iiss__ddrraawwaabbllee(...)
+ |  
+ |  iiss__ffooccuuss(...)
+ |  
+ |  iiss__sseennssiittiivvee(...)
+ |  
+ |  iiss__ttoopplleevveell(...)
+ |  
+ |  kkeeyynnaavv__ffaaiilleedd(...)
+ |  
+ |  lliisstt__aacccceell__cclloossuurreess(...)
+ |  
+ |  lliisstt__mmnneemmoonniicc__llaabbeellss(...)
+ |  
+ |  mmaapp(...)
+ |  
+ |  mmeennuu__ggeett__ffoorr__aattttaacchh__wwiiddggeett(...)
+ |  
+ |  mmnneemmoonniicc__aaccttiivvaattee(...)
+ |  
+ |  mmooddiiffyy__bbaassee(...)
+ |  
+ |  mmooddiiffyy__bbgg(...)
+ |  
+ |  mmooddiiffyy__ccuurrssoorr(...)
+ |  
+ |  mmooddiiffyy__ffgg(...)
+ |  
+ |  mmooddiiffyy__ffoonntt(...)
+ |  
+ |  mmooddiiffyy__ssttyyllee(...)
+ |  
+ |  mmooddiiffyy__tteexxtt(...)
+ |  
+ |  ppaatthh(...)
+ |  
+ |  qquueeuuee__cclleeaarr(...)
+ |  
+ |  qquueeuuee__cclleeaarr__aarreeaa(...)
+ |  
+ |  qquueeuuee__ddrraaww(...)
+ |  
+ |  qquueeuuee__ddrraaww__aarreeaa(...)
+ |  
+ |  qquueeuuee__rreessiizzee(...)
+ |  
+ |  qquueeuuee__rreessiizzee__nnoo__rreeddrraaww(...)
+ |  
+ |  rrcc__ggeett__ssttyyllee(...)
+ |  
+ |  rreeaalliizzee(...)
+ |  
+ |  rreeggiioonn__iinntteerrsseecctt(...)
+ |  
+ |  rreemmoovvee__aacccceelleerraattoorr(...)
+ |  
+ |  rreemmoovvee__mmnneemmoonniicc__llaabbeell(...)
+ |  
+ |  rreennddeerr__iiccoonn(...)
+ |  
+ |  rreeppaarreenntt(...)
+ |  
+ |  rreesseett__rrcc__ssttyylleess(...)
+ |  
+ |  rreesseett__sshhaappeess(...)
+ |  
+ |  sseelleeccttiioonn__aadddd__ttaarrggeett(...)
+ |  
+ |  sseelleeccttiioonn__aadddd__ttaarrggeettss(...)
+ |  
+ |  sseelleeccttiioonn__cclleeaarr__ttaarrggeettss(...)
+ |  
+ |  sseelleeccttiioonn__ccoonnvveerrtt(...)
+ |  
+ |  sseelleeccttiioonn__oowwnneerr__sseett(...)
+ |  
+ |  sseelleeccttiioonn__rreemmoovvee__aallll(...)
+ |  
+ |  sseenndd__eexxppoossee(...)
+ |  
+ |  sseenndd__ffooccuuss__cchhaannggee(...)
+ |  
+ |  sseett__aacccceell__ppaatthh(...)
+ |  
+ |  sseett__aaccttiivvaattee__ssiiggnnaall(...)
+ |  
+ |  sseett__aallllooccaattiioonn(...)
+ |  
+ |  sseett__aapppp__ppaaiinnttaabbllee(...)
+ |  
+ |  sseett__ccaann__ddeeffaauulltt(...)
+ |  
+ |  sseett__ccaann__ffooccuuss(...)
+ |  
+ |  sseett__cchhiilldd__vviissiibbllee(...)
+ |  
+ |  sseett__ccoolloorrmmaapp(...)
+ |  
+ |  sseett__ccoommppoossiittee__nnaammee(...)
+ |  
+ |  sseett__ddiirreeccttiioonn(...)
+ |  
+ |  sseett__ddoouubbllee__bbuuffffeerreedd(...)
+ |  
+ |  sseett__eevveennttss(...)
+ |  
+ |  sseett__eexxtteennssiioonn__eevveennttss(...)
+ |  
+ |  sseett__hhaass__ttoooollttiipp(...)
+ |  
+ |  sseett__hhaass__wwiinnddooww(...)
+ |  
+ |  sseett__mmaappppeedd(...)
+ |  
+ |  sseett__nnaammee(...)
+ |  
+ |  sseett__nnoo__sshhooww__aallll(...)
+ |  
+ |  sseett__ppaarreenntt(...)
+ |  
+ |  sseett__ppaarreenntt__wwiinnddooww(...)
+ |  
+ |  sseett__rreeaalliizzeedd(...)
+ |  
+ |  sseett__rreecceeiivveess__ddeeffaauulltt(...)
+ |  
+ |  sseett__rreeddrraaww__oonn__aallllooccaattee(...)
+ |  
+ |  sseett__ssccrroollll__aaddjjuussttmmeennttss(...)
+ |  
+ |  sseett__sseennssiittiivvee(...)
+ |  
+ |  sseett__sseett__ssccrroollll__aaddjjuussttmmeennttss__ssiiggnnaall(...)
+ |  
+ |  sseett__ssiizzee__rreeqquueesstt(...)
+ |  
+ |  sseett__ssttaattee(...)
+ |  
+ |  sseett__ssttyyllee(...)
+ |  
+ |  sseett__ttoooollttiipp__mmaarrkkuupp(...)
+ |  
+ |  sseett__ttoooollttiipp__tteexxtt(...)
+ |  
+ |  sseett__ttoooollttiipp__wwiinnddooww(...)
+ |  
+ |  sseett__uuppoossiittiioonn(...)
+ |  
+ |  sseett__uussiizzee(...)
+ |  
+ |  sseett__vviissiibbllee(...)
+ |  
+ |  sseett__wwiinnddooww(...)
+ |  
+ |  sshhaappee__ccoommbbiinnee__mmaasskk(...)
+ |  
+ |  sshhooww(...)
+ |  
+ |  sshhooww__aallll(...)
+ |  
+ |  sshhooww__nnooww(...)
+ |  
+ |  ssiizzee__aallllooccaattee(...)
+ |  
+ |  ssiizzee__rreeqquueesstt(...)
+ |  
+ |  ssttyyllee__aattttaacchh(...)
+ |  
+ |  ssttyyllee__ggeett__pprrooppeerrttyy(...)
+ |  
+ |  tthhaaww__cchhiilldd__nnoottiiffyy(...)
+ |  
+ |  ttrraannssllaattee__ccoooorrddiinnaatteess(...)
+ |  
+ |  ttrriiggggeerr__ttoooollttiipp__qquueerryy(...)
+ |  
+ |  uunnmmaapp(...)
+ |  
+ |  uunnppaarreenntt(...)
+ |  
+ |  uunnrreeaalliizzee(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from Widget:
+ |  
+ |  aallllooccaattiioonn
+ |  
+ |  nnaammee
+ |  
+ |  ppaarreenntt
+ |  
+ |  rreeqquuiissiittiioonn
+ |  
+ |  ssaavveedd__ssttaattee
+ |  
+ |  ssttaattee
+ |  
+ |  ssttyyllee
+ |  
+ |  wwiinnddooww
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Object:
+ |  
+ |  ddoo__ddeessttrrooyy(...)
+ |  
+ |  ffllaaggss(...)
+ |  
+ |  rreemmoovvee__ddaattaa(...)
+ |  
+ |  rreemmoovvee__nnoo__nnoottiiffyy(...)
+ |  
+ |  sseett__ffllaaggss(...)
+ |  
+ |  uunnsseett__ffllaaggss(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from gobject._gobject.GObject:
+ |  
+ |  ____ccooppyy____(...)
+ |  
+ |  ____ddeeeeppccooppyy____(...)
+ |  
+ |  ____ddeellaattttrr____(...)
+ |      x.__delattr__('name') <==> del x.name
+ |  
+ |  ____eeqq____(...)
+ |      x.__eq__(y) <==> x==y
+ |  
+ |  ____ggddoocc____ = 'Object GtkComboBox\n\nSignals from GtkComboBox:\n  ...ointer\n\nSignals from GObject:\n  notify (GParam)\n\n'
+ |  ____ggee____(...)
+ |      x.__ge__(y) <==> x>=y
+ |  
+ |  ____ggoobbjjeecctt__iinniitt____(...)
+ |  
+ |  ____ggtt____(...)
+ |      x.__gt__(y) <==> x>y
+ |  
+ |  ____hhaasshh____(...)
+ |      x.__hash__() <==> hash(x)
+ |  
+ |  ____llee____(...)
+ |      x.__le__(y) <==> x<=y
+ |  
+ |  ____lltt____(...)
+ |      x.__lt__(y) <==> x<y
+ |  
+ |  ____nnee____(...)
+ |      x.__ne__(y) <==> x!=y
+ |  
+ |  ____rreepprr____(...)
+ |      x.__repr__() <==> repr(x)
+ |  
+ |  ____sseettaattttrr____(...)
+ |      x.__setattr__('name', value) <==> x.name = value
+ |  
+ |  cchhaaiinn(...)
+ |  
+ |  ccoonnnneecctt(...)
+ |  
+ |  ccoonnnneecctt__aafftteerr(...)
+ |  
+ |  ccoonnnneecctt__oobbjjeecctt(...)
+ |  
+ |  ccoonnnneecctt__oobbjjeecctt__aafftteerr(...)
+ |  
+ |  ddiissccoonnnneecctt(...)
+ |  
+ |  ddiissccoonnnneecctt__bbyy__ffuunncc(...)
+ |  
+ |  eemmiitt(...)
+ |  
+ |  eemmiitt__ssttoopp__bbyy__nnaammee(...)
+ |  
+ |  ffrreeeezzee__nnoottiiffyy(...)
+ |  
+ |  ggeett__ddaattaa(...)
+ |  
+ |  ggeett__pprrooppeerrttiieess(...)
+ |  
+ |  ggeett__pprrooppeerrttyy(...)
+ |  
+ |  hhaannddlleerr__bblloocckk(...)
+ |  
+ |  hhaannddlleerr__bblloocckk__bbyy__ffuunncc(...)
+ |  
+ |  hhaannddlleerr__ddiissccoonnnneecctt(...)
+ |  
+ |  hhaannddlleerr__iiss__ccoonnnneecctteedd(...)
+ |  
+ |  hhaannddlleerr__uunnbblloocckk(...)
+ |  
+ |  hhaannddlleerr__uunnbblloocckk__bbyy__ffuunncc(...)
+ |  
+ |  nnoottiiffyy(...)
+ |  
+ |  pprrooppss = <gobject.GProps object>
+ |  sseett__ddaattaa(...)
+ |  
+ |  sseett__pprrooppeerrttiieess(...)
+ |  
+ |  sseett__pprrooppeerrttyy(...)
+ |  
+ |  ssttoopp__eemmiissssiioonn(...)
+ |  
+ |  tthhaaww__nnoottiiffyy(...)
+ |  
+ |  wweeaakk__rreeff(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from gobject._gobject.GObject:
+ |  
+ |  ____ddiicctt____
+ |  
+ |  ____ggrreeffccoouunntt____
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from gobject._gobject.GObject:
+ |  
+ |  ____nneeww____ = <built-in method __new__ of GObjectMeta object>
+ |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from atk.ImplementorIface:
+ |  
+ |  rreeff__aacccceessssiibbllee(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Buildable:
+ |  
+ |  aadddd__cchhiilldd(...)
+ |  
+ |  ccoonnssttrruucctt__cchhiilldd(...)
+ |  
+ |  ddoo__aadddd__cchhiilldd(...)
+ |  
+ |  ddoo__ccoonnssttrruucctt__cchhiilldd(...)
+ |  
+ |  ddoo__ggeett__iinntteerrnnaall__cchhiilldd(...)
+ |  
+ |  ddoo__ppaarrsseerr__ffiinniisshheedd(...)
+ |  
+ |  ddoo__sseett__nnaammee(...)
+ |  
+ |  ggeett__iinntteerrnnaall__cchhiilldd(...)
+ |  
+ |  ppaarrsseerr__ffiinniisshheedd(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from CellEditable:
+ |  
+ |  ddoo__eeddiittiinngg__ddoonnee(...)
+ |  
+ |  ddoo__rreemmoovvee__wwiiddggeett(...)
+ |  
+ |  ddoo__ssttaarrtt__eeddiittiinngg(...)
+ |  
+ |  eeddiittiinngg__ddoonnee(...)
+ |  
+ |  rreemmoovvee__wwiiddggeett(...)
+ |  
+ |  ssttaarrtt__eeddiittiinngg(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from CellLayout:
+ |  
+ |  aadddd__aattttrriibbuuttee(...)
+ |  
+ |  cclleeaarr(...)
+ |  
+ |  cclleeaarr__aattttrriibbuutteess(...)
+ |  
+ |  ddoo__aadddd__aattttrriibbuuttee(...)
+ |  
+ |  ddoo__cclleeaarr(...)
+ |  
+ |  ddoo__cclleeaarr__aattttrriibbuutteess(...)
+ |  
+ |  ddoo__ppaacckk__eenndd(...)
+ |  
+ |  ddoo__ppaacckk__ssttaarrtt(...)
+ |  
+ |  ddoo__rreeoorrddeerr(...)
+ |  
+ |  ggeett__cceellllss(...)
+ |  
+ |  ppaacckk__eenndd(...)
+ |  
+ |  ppaacckk__ssttaarrtt(...)
+ |  
+ |  rreeoorrddeerr(...)
+ |  
+ |  sseett__aattttrriibbuutteess(...)
+ |  
+ |  sseett__cceellll__ddaattaa__ffuunncc(...)
