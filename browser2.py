@@ -156,11 +156,13 @@ class Browser:
                     self.mListItem.pop(self.mComboBoxOutput.get_active())
                     self.mComboBoxOutput.remove_text(self.mComboBoxOutput.get_active())
                     self.mComboBoxOutput.set_active(0)
-                except:
-                    pass
+                except Exception as mError:
+                    self.setTitle("Errors has found ...")
+                    self.messageBox('Errors has found, check it out.', False)
+                    raise mError
 
+            self.setTitle("All item has been sent. Total of %s" % str(mSize))
             self.messageBox('Finished', True)
-
         else:
             self.messageBox('Select one product before!')
         pass
@@ -198,16 +200,20 @@ class Browser:
 
 
     def sendToServer(self, mIndex):
-
-        mUrl = self.mTextEdit.get_text()
-        mUrl += '/amadeli/product/add_via_short_mode?'
-        import urllib2, urllib
-        mData = {}
-        mData['mName'] = self.mListItem[mIndex][0]
-        mData['mImageUrl'] = self.mListItem[mIndex][1]
-        mData['mDescription'] = self.mListItem[mIndex][3]
-        mUrl += urllib.urlencode(mData)
-        print urllib2.urlopen(mUrl)
+        print '==============================\n\n\n\nSTART\n\n\n\n======================================'
+        try:
+            mUrl = self.mTextEdit.get_text()
+            mUrl += '/amadeli/product/fast_record?'
+            import urllib2, urllib
+            mData = {}
+            mData['mName'] = self.mListItem[mIndex][0]
+            mData['mImageUrl'] = self.mListItem[mIndex][1]
+            mData['mDescription'] = self.mListItem[mIndex][2]
+            mUrl += urllib.urlencode(mData)
+            print '\n\n\nURL =>', urllib2.urlopen(mUrl), '\n\n\n'
+        except Exception as mError:
+            raise(mError)
+        print '+==============================\n\n\n\nEND\n\n\n\n=========================+============='
 
 
     def onButtonDeleteClicked(self, mButton):
@@ -246,7 +252,7 @@ class Browser:
         self.window.set_title("Cracking VipFolheados - Status: %s" % mData)
 
     # La funcion magica que abre la url que se le pasa
-    def open_url(self, url="https://vipfolheados.com.br/", mServerUrl = "http://fsi-deployment.ddns.net/amadeli"):
+    def open_url(self, url="https://vipfolheados.com.br/", mServerUrl = "http://localhost:8080"):
         # cambia el titulo de la ventana
         self.setTitle(url)
         # mostramos la direccion de la pagina abierta en el entry
